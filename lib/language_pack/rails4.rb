@@ -70,6 +70,9 @@ WARNING
   def run_assets_precompile_rake_task
     instrument "rails4.run_assets_precompile_rake_task" do
       log("assets_precompile") do
+        puts "Asset precompiling in deployment is disabled. Ask Rares for info."
+        return true
+        
         if Dir.glob("public/assets/{.sprockets-manifest-*.json,manifest-*.json}", File::FNM_DOTMATCH).any?
           puts "Detected manifest file, assuming assets were compiled locally"
           return true

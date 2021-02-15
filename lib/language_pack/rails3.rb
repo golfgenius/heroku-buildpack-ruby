@@ -176,6 +176,9 @@ WARNING
   def run_assets_precompile_rake_task
     instrument "rails3.run_assets_precompile_rake_task" do
       log("assets_precompile") do
+        puts "Asset precompiling in deployment is disabled. Ask Rares for info."
+        return true
+
         if File.exists?("public/assets/manifest.yml")
           puts "Detected manifest.yml, assuming assets were compiled locally"
           return true

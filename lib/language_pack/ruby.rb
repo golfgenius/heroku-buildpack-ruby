@@ -1137,6 +1137,8 @@ params = CGI.parse(uri.query || "")
 
   def run_assets_precompile_rake_task
     instrument 'ruby.run_assets_precompile_rake_task' do
+      puts "Asset precompiling in deployment is disabled. Ask Rares for info."
+      return true
 
       precompile = rake.task("assets:precompile")
       return true unless precompile.is_defined?
